@@ -14,7 +14,7 @@ function Hero() {
         <h2>Frontend Engineer & Web Developer</h2>
 
 <p className="hero-description">
-  Information Technology unndergraduate from Telkom University
+  Information Technology undergraduate from Telkom University
   passionate about building responsive and user-focused
   web applications.
 </p>
