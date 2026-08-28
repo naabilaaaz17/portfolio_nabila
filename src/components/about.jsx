@@ -25,7 +25,7 @@ function About() {
                 <span className="edu-degree">Bachelor of Information Technology</span>
               </div>
             </div>
-            <span className="edu-period">Aug 2022 – Nov 2026 (Expected)</span>
+            <span className="edu-period">Sept 2022 – Nov 2026 (Expected)</span>
             <span className="edu-gpa">GPA: 3.66 / 4.00</span>
           </div>
 

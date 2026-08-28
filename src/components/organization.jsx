@@ -8,7 +8,7 @@ function Organization() {
     {
       name: "Himpunan Mahasiswa Teknologi Informasi (HMIT)",
       role: "Student Interest and Talent Staff",
-      period: "Mar 2024 – Dec 2026",
+      period: "Mar 2024 – Dec 2025",
       photo: studentInterestPhoto,
     },
     {
