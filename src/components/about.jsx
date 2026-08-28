@@ -10,7 +10,7 @@ function About() {
           <h2>Crafting responsive and user-friendly web applications with modern technologies.</h2>
 
           <div className="about-cta">
-            <a href="/cv.pdf" download className="btn primary">Download CV</a>
+            <a href="/cvnabilabismillah.pdf" download className="btn primary">Download CV</a>
           </div>
         </div>
 

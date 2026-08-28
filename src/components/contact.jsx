@@ -14,19 +14,21 @@ function Contact() {
         </div>
       </div>
 
-      <p className="section-eyebrow">Contact</p>
-      <h2>Let's build something<br /><em>together.</em></h2>
+      <div className="contact-content">
+        <p className="section-eyebrow">Contact</p>
+        <h2>Let's build something<br /><em>together.</em></h2>
 
-      <p>
-        I'm open to opportunities in frontend development,
-        web development, and related roles.
-      </p>
+        <p>
+          I'm open to opportunities in frontend development,
+          web development, and related roles.
+        </p>
 
-      <div className="contact-links">
-        <a href="mailto:naabilaaaz17@gmail.com">Email</a>
-        <a href="http://www.linkedin.com/in/naabila-az-zahra" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a href="https://instagram.com/naabilaaaz" target="_blank" rel="noreferrer">Instagram</a>
-        <a href="tel:+6288221583992">Phone</a>
+        <div className="contact-links">
+          <a href="mailto:naabilaaaz17@gmail.com">Email</a>
+          <a href="http://www.linkedin.com/in/naabila-az-zahra" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://instagram.com/naabilaaaz" target="_blank" rel="noreferrer">Instagram</a>
+          <a href="tel:+6288221583992">Phone</a>
+        </div>
       </div>
 
     </section>

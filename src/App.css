@@ -562,6 +562,50 @@ a {
   display: block;
   transition: transform 0.4s ease;
 }
+.project-image {
+  position: relative;
+  cursor: pointer;
+}
+
+.project-zoom-hint {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background 0.25s ease;
+}
+
+.project-card:hover .project-zoom-hint {
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.project-zoom-hint-icon {
+  font-size: 26px;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+}
+
+.project-zoom-hint-text {
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  filter: drop-shadow(0 1px 4px rgba(0,0,0,0.4));
+}
+
+.project-card:hover .project-zoom-hint-icon,
+.project-card:hover .project-zoom-hint-text {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
 
 .project-card:hover .project-image img {
   transform: scale(1.04);
@@ -698,6 +742,7 @@ a {
   flex-shrink: 0;
 }
 
+
 /* =========================
    organization
 ========================= */
@@ -716,11 +761,6 @@ a {
   display: flex;
   flex-direction: column;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.organization-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
 }
 
 .organization-card-image {
@@ -844,7 +884,125 @@ a {
   object-fit: contain;
   display: block;
 }
+/* =========================
+   certification zoom modal
+========================= */
 
+.cert-zoom-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.92);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: certZoomFade 0.2s ease;
+}
+
+@keyframes certZoomFade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.cert-zoom-content {
+  max-width: 88vw;
+  max-height: 86vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  animation: certZoomIn 0.2s ease;
+}
+
+@keyframes certZoomIn {
+  from { transform: scale(0.94); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+.cert-zoom-content img {
+  max-width: 88vw;
+  max-height: 76vh;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.cert-zoom-caption {
+  text-align: center;
+  color: #eee;
+}
+
+.cert-zoom-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.cert-zoom-issuer {
+  font-size: 13px;
+  color: #999;
+}
+
+.cert-zoom-close {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 34px;
+  line-height: 1;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.cert-zoom-close:hover {
+  opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+  .cert-zoom-content img {
+    max-height: 68vh;
+  }
+
+  .cert-zoom-close {
+    top: 14px;
+    right: 16px;
+    font-size: 28px;
+  }
+}
+.certification-image {
+  position: relative;
+  cursor: pointer;
+}
+
+.cert-zoom-hint {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.25s ease;
+}
+
+.certification-image:hover .cert-zoom-hint {
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.cert-zoom-hint-icon {
+  font-size: 26px;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+}
+
+.certification-image:hover .cert-zoom-hint-icon {
+  opacity: 1;
+  transform: scale(1);
+}
 
 /* =========================
    contact
@@ -910,11 +1068,16 @@ a {
   position: relative;
   overflow: hidden;
 }
-
 .contact-photos {
   position: absolute;
   inset: 0;
   pointer-events: none;
+  z-index: 0; /* ← foto di lapisan bawah */
+}
+
+.contact-content {
+  position: relative;
+  z-index: 1; /* ← teks di lapisan atas */
 }
 
 .contact-photo {
@@ -962,6 +1125,117 @@ footer {
   font-size: 11px;
 }
 
+/* =========================
+   lightbox
+========================= */
+
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.92);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: lightboxFade 0.2s ease;
+}
+
+@keyframes lightboxFade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.lightbox-content {
+  max-width: 88vw;
+  max-height: 86vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.lightbox-content img {
+  max-width: 88vw;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-counter {
+  color: #ccc;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 34px;
+  line-height: 1;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.lightbox-close:hover {
+  opacity: 0.6;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  font-size: 28px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.lightbox-nav:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.lightbox-prev {
+  left: 24px;
+}
+
+.lightbox-next {
+  right: 24px;
+}
+
+@media (max-width: 768px) {
+  .lightbox-close {
+    top: 14px;
+    right: 16px;
+    font-size: 28px;
+  }
+
+  .lightbox-nav {
+    width: 38px;
+    height: 38px;
+    font-size: 22px;
+  }
+
+  .lightbox-prev {
+    left: 10px;
+  }
+
+  .lightbox-next {
+    right: 10px;
+  }
+}
 
 /* =========================
    responsive
