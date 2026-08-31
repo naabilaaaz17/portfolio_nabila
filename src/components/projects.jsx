@@ -26,7 +26,7 @@ const projects = [
   {
     year: "2025",
     title: "Craftfolio",
-    description: "Developed a web application that automatically generates personal portfolio websites from user input. Features customizable dynamic templates, drag-and-drop interface, and a template marketplace, cutting creation time from 2–3 weeks to under 30 minutes.",
+    description: "A web-based portfolio builder that helps designers create and showcase their work easily, built with Laravel and Bootstrap.",
     images: [craftfolioImg, craftfolioImg2],
     tech: ["Laravel", "Bootstrap"],
   },
@@ -40,7 +40,6 @@ const projects = [
 ]
 
 function Projects() {
-  // lightboxProject = index project yang lagi dibuka, lightboxIndex = foto keberapa yang aktif
   const [lightboxProject, setLightboxProject] = useState(null)
   const [lightboxIndex, setLightboxIndex] = useState(0)
 
@@ -65,7 +64,6 @@ function Projects() {
     setLightboxIndex((prev) => (prev - 1 + total) % total)
   }, [lightboxProject])
 
-  // keyboard nav: ESC nutup, panah kiri/kanan geser foto
   useEffect(() => {
     if (lightboxProject === null) return
 
@@ -76,7 +74,7 @@ function Projects() {
     }
 
     document.addEventListener("keydown", handleKeyDown)
-    document.body.style.overflow = "hidden" // biar background gak ikut scroll
+    document.body.style.overflow = "hidden" 
 
     return () => {
       document.removeEventListener("keydown", handleKeyDown)
@@ -144,7 +142,7 @@ function Projects() {
 
           <div
             className="lightbox-content"
-            onClick={(e) => e.stopPropagation()} // biar klik di foto gak ikut nutup modal
+            onClick={(e) => e.stopPropagation()} 
           >
             <img
               src={activeImages[lightboxIndex]}

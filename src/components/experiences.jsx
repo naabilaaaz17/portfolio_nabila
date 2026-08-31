@@ -15,7 +15,7 @@ function Experience() {
               <h3>Frontend Engineer Intern - MAGENTA Internship Program</h3>
               <p>PT Len Railway Systems</p>
             </div>
-            <span>Aug 2025 – Sep 2025</span>
+            <span>May 2025 – Sep 2025</span>
           </div>
 
           <ul>
