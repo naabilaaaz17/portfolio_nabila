@@ -6,23 +6,23 @@ function Experience() {
   return (
     <section id="experience" className="experience-section" style={{ paddingTop: '20px' }}>
       <div style={{ maxWidth: '1300px', margin: 'auto' }}>
-        <p className="section-eyebrow">Experience</p>
-        <h2>Work Experience</h2>
+        <p className="section-eyebrow">Pengalaman</p>
+        <h2>Pengalaman Kerja</h2>
 
         <div className="experience-card">
           <div className="experience-header">
             <div>
-              <h3>Frontend Engineer Intern - MAGENTA Internship Program</h3>
+              <h3>Frontend Engineer Intern - Program Magang MAGENTA</h3>
               <p>PT Len Railway Systems</p>
             </div>
-            <span>May 2025 – Sep 2025</span>
+            <span>Mei 2025 – Sep 2025</span>
           </div>
 
           <ul>
-            <li>Developed a web-based system to digitize Work Instructions, replacing manual documentation processes.</li>
-            <li>Implemented CRUD operations, data validation, status tracking, and database-driven documentation features.</li>
-            <li>Applied Object-Oriented Programming principles to improve system scalability and maintainability.</li>
-            <li>Collaborated with the development team to build and test features based on business requirements.</li>
+            <li>Mengembangkan sistem berbasis web untuk mendigitalisasi Work Instructions, menggantikan proses dokumentasi manual.</li>
+            <li>Mengimplementasikan operasi CRUD, validasi data, pelacakan status, dan fitur dokumentasi berbasis database.</li>
+            <li>Menerapkan prinsip Object-Oriented Programming untuk meningkatkan skalabilitas dan kemudahan pemeliharaan sistem.</li>
+            <li>Berkolaborasi dengan tim pengembangan dalam membangun dan menguji fitur berdasarkan kebutuhan bisnis.</li>
           </ul>
 
           <div className="experience-photos">
