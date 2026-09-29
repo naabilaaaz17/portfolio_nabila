@@ -11,7 +11,7 @@ import eventEaseImg2 from "../assets/projects/eventease3.png"
 const projects = [
   {
     year: "2026",
-    title: "Website Yayasan Pendidikan Rumah Sukses",
+    title: "Rumah Sukses Education Foundation Website",
     description: "Developed an integrated web platform for a Preschool and tutoring foundation in Papua. Features online student enrollment connected to an admin dashboard with CSV export, automated email/WhatsApp notifications, Google Maps integration, and a fully responsive design.",
     images: [rumahSuksesImg, rumahSuksesImg2],
     tech: ["React", "Node.js", "MongoDB"],
