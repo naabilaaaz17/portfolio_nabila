@@ -12,28 +12,28 @@ const projects = [
   {
     year: "2026",
     title: "Website Yayasan Pendidikan Rumah Sukses",
-    description: "Mengembangkan platform web terintegrasi untuk yayasan pendidikan Preschool dan bimbingan belajar di Papua. Fitur yang tersedia meliputi pendaftaran siswa secara online yang terhubung dengan dashboard admin, ekspor data ke CSV, notifikasi otomatis melalui email/WhatsApp, integrasi Google Maps, serta desain yang responsif.",
+    description: "Developed an integrated web platform for a Preschool and tutoring foundation in Papua. Features online student enrollment connected to an admin dashboard with CSV export, automated email/WhatsApp notifications, Google Maps integration, and a fully responsive design.",
     images: [rumahSuksesImg, rumahSuksesImg2],
     tech: ["React", "Node.js", "MongoDB"],
   },
   {
     year: "2025",
     title: "DoTrack",
-    description: "Mengembangkan sistem berbasis web untuk mendigitalisasi Work Instructions di PT Len Railway Systems dan menggantikan proses dokumentasi manual. Sistem memiliki fitur CRUD, validasi data, pelacakan status, dan dokumentasi berbasis database yang dikembangkan secara kolaboratif dengan menerapkan prinsip OOP untuk mendukung skalabilitas.",
+    description: "Developed a web-based system to digitize Work Instructions at PT Len Railway Systems, replacing manual documentation. Features CRUD operations, data validation, status tracking, and database-driven documentation, built collaboratively using OOP principles for scalability.",
     images: [dotrackImg, dotrackImg2],
     tech: ["React", "Firebase"],
   },
   {
     year: "2025",
     title: "Craftfolio",
-    description: "Membangun portfolio builder berbasis web yang membantu desainer membuat dan menampilkan karya mereka dengan mudah menggunakan Laravel dan Bootstrap.",
+    description: "A web-based portfolio builder that helps designers create and showcase their work easily, built with Laravel and Bootstrap.",
     images: [craftfolioImg, craftfolioImg2],
     tech: ["Laravel", "Bootstrap"],
   },
   {
     year: "2023",
     title: "EventEase",
-    description: "Platform manajemen acara berbasis web dengan fitur pembuatan acara dan pendaftaran peserta, dibangun menggunakan prinsip OOP untuk menghasilkan sistem yang modular dan mudah dikembangkan.",
+    description: "Web-based event management platform with event creation and participant registration features, built using OOP principles for a modular and scalable system.",
     images: [eventEaseImg, eventEaseImg2],
     tech: ["Java", "MySQL", "Apache Tomcat"],
   },
@@ -74,7 +74,7 @@ function Projects() {
     }
 
     document.addEventListener("keydown", handleKeyDown)
-    document.body.style.overflow = "hidden"
+    document.body.style.overflow = "hidden" 
 
     return () => {
       document.removeEventListener("keydown", handleKeyDown)
@@ -82,13 +82,12 @@ function Projects() {
     }
   }, [lightboxProject, closeLightbox, showNext, showPrev])
 
-  const activeImages =
-    lightboxProject !== null ? projects[lightboxProject].images : []
+  const activeImages = lightboxProject !== null ? projects[lightboxProject].images : []
 
   return (
     <section className="section" id="projects" style={{ paddingTop: '20px' }}>
-      <p className="section-eyebrow">Proyek Pilihan</p>
-      <h2>Proyek yang Saya Bangun</h2>
+      <p className="section-eyebrow">Selected work</p>
+      <h2>Projects I've built</h2>
 
       <div className="projects-grid">
         {projects.map((project, projectIdx) => (
@@ -98,14 +97,10 @@ function Projects() {
               onClick={() => openLightbox(projectIdx, 0)}
             >
               <img src={project.images[0]} alt={project.title} />
-
               <div className="project-zoom-hint">
                 <span className="project-zoom-hint-icon">🔍</span>
-
                 {project.images.length > 1 && (
-                  <span className="project-zoom-hint-text">
-                    {project.images.length} foto
-                  </span>
+                  <span className="project-zoom-hint-text">{project.images.length} photos</span>
                 )}
               </div>
             </div>
@@ -138,10 +133,7 @@ function Projects() {
           {activeImages.length > 1 && (
             <button
               className="lightbox-nav lightbox-prev"
-              onClick={(e) => {
-                e.stopPropagation()
-                showPrev()
-              }}
+              onClick={(e) => { e.stopPropagation(); showPrev() }}
               aria-label="Foto sebelumnya"
             >
               ‹
@@ -150,13 +142,12 @@ function Projects() {
 
           <div
             className="lightbox-content"
-            onClick={(e) => e.stopPropagation()}
+            onClick={(e) => e.stopPropagation()} 
           >
             <img
               src={activeImages[lightboxIndex]}
               alt={`${projects[lightboxProject].title} - ${lightboxIndex + 1}`}
             />
-
             {activeImages.length > 1 && (
               <div className="lightbox-counter">
                 {lightboxIndex + 1} / {activeImages.length}
@@ -167,10 +158,7 @@ function Projects() {
           {activeImages.length > 1 && (
             <button
               className="lightbox-nav lightbox-next"
-              onClick={(e) => {
-                e.stopPropagation()
-                showNext()
-              }}
+              onClick={(e) => { e.stopPropagation(); showNext() }}
               aria-label="Foto berikutnya"
             >
               ›

@@ -5,15 +5,16 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <a href="#" className="logo">Portofolio.</a>
+      <a href="#" className="logo">Portfolio.</a>
 
       <div className={`nav-links ${isOpen ? 'active' : ''}`}>
-        <a href="#about" onClick={() => setIsOpen(false)}>Tentang Saya</a>
-        <a href="#experience" onClick={() => setIsOpen(false)}>Pengalaman</a>
-        <a href="#projects" onClick={() => setIsOpen(false)}>Proyek</a>
-        <a href="#skills" onClick={() => setIsOpen(false)}>Keahlian</a>
-        <a href="#certifications" onClick={() => setIsOpen(false)}>Sertifikasi</a>
-        <a href="#contact" onClick={() => setIsOpen(false)}>Kontak</a>
+        <a href="#about" onClick={() => setIsOpen(false)}>About</a>
+        <a href="#experience" onClick={() => setIsOpen(false)}>Experience</a>
+        <a href="#projects" onClick={() => setIsOpen(false)}>Projects</a>
+        <a href="#skills" onClick={() => setIsOpen(false)}>Skills</a>
+        <a href="#organization" onClick={() => setIsOpen(false)}>Organization</a>
+        <a href="#certifications" onClick={() => setIsOpen(false)}>Certifications</a>
+        <a href="#contact" onClick={() => setIsOpen(false)}>Contact</a>
       </div>
 
       <button

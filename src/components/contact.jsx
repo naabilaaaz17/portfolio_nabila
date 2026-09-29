@@ -15,19 +15,19 @@ function Contact() {
       </div>
 
       <div className="contact-content">
-        <p className="section-eyebrow">Kontak</p>
-        <h2>Mari membangun sesuatu <em>bersama.</em></h2>
+        <p className="section-eyebrow">Contact</p>
+        <h2>Let's build something<br /><em>together.</em></h2>
 
         <p>
-          Saya terbuka untuk peluang di bidang frontend development,
-          web development, dan posisi terkait lainnya.
+          I'm open to opportunities in frontend development,
+          web development, and related roles.
         </p>
 
         <div className="contact-links">
           <a href="mailto:naabilaaaz17@gmail.com">Email</a>
           <a href="http://www.linkedin.com/in/naabila-az-zahra" target="_blank" rel="noreferrer">LinkedIn</a>
           <a href="https://instagram.com/naabilaaaz" target="_blank" rel="noreferrer">Instagram</a>
-          <a href="tel:+88221583992">Telepon</a>
+          <a href="tel:+6288221583992">Phone</a>
         </div>
       </div>
 

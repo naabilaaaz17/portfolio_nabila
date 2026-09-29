@@ -7,34 +7,38 @@ function Organization() {
   const organizations = [
     {
       name: "Himpunan Mahasiswa Teknologi Informasi (HMIT)",
-      role: "Staf Divisi Minat dan Bakat",
-      period: "Mar 2024 – Des 2025",
+      role: "Student Interest and Talent Staff",
+      period: "Mar 2024 – Dec 2025",
       photo: studentInterestPhoto,
     },
     {
       name: "Interium Festival",
-      role: "Staf Divisi Operasional",
+      role: "Operational Division Staff",
       period: "Mei 2024 – Jan 2025",
       photo: interiumPhoto,
     },
     {
       name: "Proximiti 2024",
-      role: "Staf Tim Konsumsi & Kesehatan",
-      period: "Mar 2024 – Des 2024",
+      role: "Consumption & Health Team Staff",
+      period: "Mar 2024 – Dec 2024",
       photo: proximitiPhoto,
     },
     {
       name: "Mudik Roadshow IMAKA",
-      role: "Wakil Ketua Pelaksana",
+      role: "Vice Project Leader",
       period: "Jan 2023 – Mar 2023",
       photo: mudikRoadshowPhoto,
     },
   ]
 
-  return (
-    <section className="section" style={{ paddingTop: '20px' }}>
-      <p className="section-eyebrow">Organisasi</p>
-      <h2>Pengalaman Organisasi</h2>
+ return (
+    <section
+      id="organization"
+      className="section"
+      style={{ paddingTop: '20px' }}
+    >
+      <p className="section-eyebrow">Organization</p>
+      <h2>Organizational Experience</h2>
 
       <div className="organization-grid">
         {organizations.map((org) => (

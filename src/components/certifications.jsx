@@ -53,15 +53,15 @@ function Certifications() {
     }
   }, [activeCert, closeModal])
 
-  return (
+ return (
     <section
       id="certifications"
       className="certifications-section"
       style={{ paddingTop: '20px' }}
     >
       <div style={{ maxWidth: '1300px', margin: 'auto' }}>
-        <p className="section-eyebrow">Sertifikasi</p>
-        <h2>Sertifikasi & Pencapaian</h2>
+        <p className="section-eyebrow">Certifications</p>
+        <h2>Certifications & Achievements</h2>
 
         <div className="certifications">
           {certifications.map((cert) => (
@@ -103,12 +103,9 @@ function Certifications() {
             onClick={(e) => e.stopPropagation()}
           >
             <img src={activeCert.image} alt={activeCert.title} />
-
             <div className="cert-zoom-caption">
               <p className="cert-zoom-title">{activeCert.title}</p>
-              <p className="cert-zoom-issuer">
-                {activeCert.issuer} · {activeCert.year}
-              </p>
+              <p className="cert-zoom-issuer">{activeCert.issuer} · {activeCert.year}</p>
             </div>
           </div>
         </div>
