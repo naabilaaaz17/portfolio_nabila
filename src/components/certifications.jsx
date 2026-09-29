@@ -10,29 +10,36 @@ function Certifications() {
       title: "Author — ICERA 2026 International Conference",
       issuer: "ICERA — Electronics Representation and Algorithm",
       year: "2026",
+      description:
+        "Authored and presented a research paper on factors influencing Indonesian e-commerce users’ intention to adopt multi-factor authentication using an extended Technology Acceptance Model.",
       image: iceracert,
     },
     {
       title: "English Proficiency Test (EPrT)",
       issuer: "Telkom University",
       year: "2026",
+      description:
+        "Achieved an EPrT score of 490, demonstrating English proficiency in an academic and professional context.",
       image: eprtCert,
     },
     {
       title: "Magang Generasi Bertalenta (MAGENTA)",
       issuer: "PT Len Industri (Persero)",
       year: "2025",
+      description:
+        "Completed the MAGENTA internship program at PT Len Railway Systems, contributing to web-based documentation and work instruction digitization through database management, feature testing, and system documentation.",
       image: magangCert,
     },
     {
       title: "Preparation Course for Azure AI Fundamentals (AI-900)",
       issuer: "Microsoft",
       year: "2025",
+      description:
+        "Completed a preparation course covering fundamental concepts of artificial intelligence and Microsoft Azure AI services.",
       image: azureAiCert,
     },
   ]
 
-  // cert yang lagi di-zoom, null kalau modal tertutup
   const [activeCert, setActiveCert] = useState(null)
 
   const closeModal = useCallback(() => setActiveCert(null), [])
@@ -53,13 +60,13 @@ function Certifications() {
     }
   }, [activeCert, closeModal])
 
- return (
+  return (
     <section
       id="certifications"
       className="certifications-section"
-      style={{ paddingTop: '20px' }}
+      style={{ paddingTop: "20px" }}
     >
-      <div style={{ maxWidth: '1300px', margin: 'auto' }}>
+      <div style={{ maxWidth: "1300px", margin: "auto" }}>
         <p className="section-eyebrow">Certifications</p>
         <h2>Certifications & Achievements</h2>
 
@@ -71,14 +78,20 @@ function Certifications() {
                   <h3>{cert.title}</h3>
                   <p>{cert.issuer}</p>
                 </div>
+
                 <span className="cert-year">{cert.year}</span>
               </div>
+
+              <p className="cert-description">
+                {cert.description}
+              </p>
 
               <div
                 className="certification-image"
                 onClick={() => setActiveCert(cert)}
               >
                 <img src={cert.image} alt={cert.title} />
+
                 <div className="cert-zoom-hint">
                   <span className="cert-zoom-hint-icon">🔍</span>
                 </div>
@@ -93,7 +106,7 @@ function Certifications() {
           <button
             className="cert-zoom-close"
             onClick={closeModal}
-            aria-label="Tutup"
+            aria-label="Close"
           >
             ×
           </button>
@@ -103,9 +116,12 @@ function Certifications() {
             onClick={(e) => e.stopPropagation()}
           >
             <img src={activeCert.image} alt={activeCert.title} />
+
             <div className="cert-zoom-caption">
               <p className="cert-zoom-title">{activeCert.title}</p>
-              <p className="cert-zoom-issuer">{activeCert.issuer} · {activeCert.year}</p>
+              <p className="cert-zoom-issuer">
+                {activeCert.issuer} · {activeCert.year}
+              </p>
             </div>
           </div>
         </div>
