@@ -1,43 +1,90 @@
 import telkomLogo from "../assets/telkom-logo.png"
 
+const skills = ["HTML", "CSS", "JavaScript", "React", "Bootstrap", "Laravel"]
+
+const highlights = [
+  "Implementasi fitur aplikasi web, frontend hingga backend",
+  "Input dan validasi data, serta pengujian fungsionalitas fitur",
+  "Pengelolaan dan integrasi data dengan database",
+]
+
 function About() {
   return (
-    <section id="about" className="section" style={{ paddingTop: '20px' }}>
-      <p className="section-eyebrow">About me</p>
+    <section id="about" className="about-section">
+      <div className="about-inner">
+        <p className="section-eyebrow">About me</p>
 
-      <div className="about-layout">
-        <div className="about-left">
-          <h2>Crafting responsive and user-friendly web applications with modern technologies.</h2>
+        {/* ---------- pernyataan besar ---------- */}
+        <h2 className="ed-statement">
+          Berfokus pada pengembangan web dan pengalaman pengguna.
+        </h2>
 
-          <div className="about-cta">
-            <a href={`${import.meta.env.BASE_URL}CV-NABILA.pdf`} download className="btn primary">
-  Download CV
-</a>
+        {/* ---------- dua kolom: cerita + poin ---------- */}
+        <div className="ed-body">
+          <div className="ed-story">
+            <p className="ed-lead">
+              Lulusan Teknologi Informasi dari Universitas Telkom dengan
+              pengalaman mengembangkan aplikasi web melalui program magang dan
+              berbagai proyek akademik. Memahami alur pengembangan dari
+              frontend hingga backend, dengan minat khusus pada Front-End
+              Development.
+            </p>
+
+            <p className="ed-text">
+              Teliti, adaptif, dan komunikatif. Mampu bekerja mandiri maupun
+              dalam tim, serta terus mempelajari teknologi baru.
+            </p>
+
+            <div className="ed-cta">
+              <a
+                href={`${import.meta.env.BASE_URL}CV-NABILA.pdf`}
+                download
+                className="btn primary"
+              >
+                Download CV
+              </a>
+              <a href="#contact" className="btn secondary">
+                Hubungi saya
+              </a>
+            </div>
           </div>
+
+          <ul className="ed-list">
+            {highlights.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
         </div>
 
-        <div className="about-right">
-          <div className="about-tag edu-card">
-            <div className="edu-header">
-              <img src={telkomLogo} alt="Telkom University logo" className="edu-logo" />
-              <div className="edu-header-text">
-                <span className="edu-name">Telkom University</span>
-                <span className="edu-degree">Bachelor of Information Technology</span>
-              </div>
+        {/* ---------- pita: pendidikan, IPK, skill ---------- */}
+        <div className="ed-ribbon">
+          <div className="ed-edu">
+            <img
+              src={telkomLogo}
+              alt="Logo Telkom University"
+              className="ed-logo"
+            />
+            <div className="ed-edu-text">
+              <span className="ed-edu-name">Universitas Telkom</span>
+              <span className="ed-edu-degree">
+                Sarjana Teknologi Informasi
+              </span>
+              <span className="ed-edu-period">Sept 2022 – Aug 2026</span>
             </div>
-            <span className="edu-period">Sept 2022 – Aug 2026</span>
-            <span className="edu-gpa">GPA: 3.66 / 4.00</span>
           </div>
 
-          <p>
-            Information Technology graduate from Telkom University with hands-on
-            experience as a Frontend Engineer intern at PT Len Railway Systems,
-            building responsive interfaces with React, Laravel, and MySQL across
-            several web projects. Author of a published conference paper, with a
-            strong interest in translating complex requirements into clean,
-            accessible user interfaces.
-          </p>
+          <div className="ed-gpa">
+            <strong>3.66</strong>
+            <span>dari 4.00</span>
+          </div>
 
+          <div className="ed-chips">
+            {skills.map((skill) => (
+              <span key={skill} className="ed-chip">
+                {skill}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -4,45 +4,59 @@ import azureAiCert from "../assets/certifications/azure-ai-900.png"
 import magangCert from "../assets/certifications/magang-len.png"
 import iceracert from "../assets/certifications/icera-2026.png"
 
-function Certifications() {
-  const certifications = [
-    {
-      title: "Author — ICERA 2026 International Conference",
-      issuer: "ICERA — Electronics Representation and Algorithm",
-      year: "2026",
-      description:
-        "Authored and presented a research paper on factors influencing Indonesian e-commerce users’ intention to adopt multi-factor authentication using an extended Technology Acceptance Model.",
-      image: iceracert,
-    },
-    {
-      title: "English Proficiency Test (EPrT)",
-      issuer: "Telkom University",
-      year: "2026",
-      description:
-        "Achieved an EPrT score of 490, demonstrating English proficiency in an academic and professional context.",
-      image: eprtCert,
-    },
-    {
-      title: "Magang Generasi Bertalenta (MAGENTA)",
-      issuer: "PT Len Industri (Persero)",
-      year: "2025",
-      description:
-        "Completed the MAGENTA internship program at PT Len Railway Systems, contributing to web-based documentation and work instruction digitization through database management, feature testing, and system documentation.",
-      image: magangCert,
-    },
-    {
-      title: "Preparation Course for Azure AI Fundamentals (AI-900)",
-      issuer: "Microsoft",
-      year: "2025",
-      description:
-        "Completed a preparation course covering fundamental concepts of artificial intelligence and Microsoft Azure AI services.",
-      image: azureAiCert,
-    },
-  ]
+const certifications = [
+  {
+    title: "Penulis dan Presenter— International Conference",
+    issuer: "The 5th International Conference on Electronics Representation and Algorithm",
+    year: "2026",
+    description:
+      "Menulis dan mempresentasikan makalah penelitian tentang faktor-faktor yang memengaruhi niat pengguna e-commerce Indonesia untuk mengadopsi autentikasi multi-faktor menggunakan Technology Acceptance Model yang diperluas.",
+    image: iceracert,
+  },
+  {
+    title: "English Proficiency Test (EPrT)",
+    issuer: "Universitas Telkom",
+    year: "2026",
+    description:
+      "Memperoleh skor EPrT sebesar 490, yang menunjukkan kemampuan bahasa Inggris dalam konteks akademik dan profesional.",
+    image: eprtCert,
+  },
+  {
+    title: "Magang Generasi Bertalenta (MAGENTA)",
+    issuer: "PT Len Industri (Persero)",
+    year: "2025",
+    description:
+      "Menyelesaikan program magang MAGENTA di PT Len Railway Systems, berkontribusi pada dokumentasi berbasis web dan digitalisasi instruksi kerja melalui pengelolaan database, pengujian fitur, dan dokumentasi sistem.",
+    image: magangCert,
+  },
+  {
+    title: "Kursus Persiapan Azure AI Fundamentals (AI-900)",
+    issuer: "Microsoft",
+    year: "2025",
+    description:
+      "Menyelesaikan kursus persiapan yang membahas konsep dasar kecerdasan buatan dan layanan Microsoft Azure AI.",
+    image: azureAiCert,
+  },
+]
 
+function Certifications() {
+  const [selected, setSelected] = useState(0)
   const [activeCert, setActiveCert] = useState(null)
 
+  const current = certifications[selected]
   const closeModal = useCallback(() => setActiveCert(null), [])
+
+  // panah atas/bawah (atau kiri/kanan) untuk berpindah antar tab
+  const handleTabKeyDown = (e) => {
+    const total = certifications.length
+    let next = null
+    if (e.key === "ArrowDown" || e.key === "ArrowRight") next = (selected + 1) % total
+    if (e.key === "ArrowUp" || e.key === "ArrowLeft") next = (selected - 1 + total) % total
+    if (next === null) return
+    e.preventDefault()
+    setSelected(next)
+    document.getElementById(`cert-tab-${next}`)?.focus()
+  }
 
   useEffect(() => {
     if (!activeCert) return
@@ -61,43 +75,76 @@ function Certifications() {
   }, [activeCert, closeModal])
 
   return (
-    <section
-      id="certifications"
-      className="certifications-section"
-      style={{ paddingTop: "20px" }}
-    >
-      <div style={{ maxWidth: "1300px", margin: "auto" }}>
+    <section id="certifications" className="certifications-section">
+      <div className="certifications-inner">
         <p className="section-eyebrow">Certifications</p>
         <h2>Certifications & Achievements</h2>
 
-        <div className="certifications">
-          {certifications.map((cert) => (
-            <div className="certification-card" key={cert.title}>
-              <div className="cert-meta">
-                <div>
-                  <h3>{cert.title}</h3>
-                  <p>{cert.issuer}</p>
-                </div>
-
-                <span className="cert-year">{cert.year}</span>
-              </div>
-
-              <p className="cert-description">
-                {cert.description}
-              </p>
-
-              <div
-                className="certification-image"
-                onClick={() => setActiveCert(cert)}
+        <div className="cert-showcase">
+          {/* ---------- KIRI: daftar ---------- */}
+          <div
+            className="cert-list"
+            role="tablist"
+            aria-label="Daftar sertifikasi"
+            aria-orientation="vertical"
+          >
+            {certifications.map((cert, i) => (
+              <button
+                key={cert.title}
+                id={`cert-tab-${i}`}
+                type="button"
+                role="tab"
+                aria-selected={i === selected}
+                aria-controls="cert-panel"
+                tabIndex={i === selected ? 0 : -1}
+                className={`cert-tab${i === selected ? " active" : ""}`}
+                onClick={() => setSelected(i)}
+                onKeyDown={handleTabKeyDown}
               >
-                <img src={cert.image} alt={cert.title} />
+                <span className="cert-tab-year">{cert.year}</span>
 
-                <div className="cert-zoom-hint">
-                  <span className="cert-zoom-hint-icon">🔍</span>
-                </div>
+                <span className="cert-tab-text">
+                  <span className="cert-tab-title">{cert.title}</span>
+                  <span className="cert-tab-issuer">{cert.issuer}</span>
+                </span>
+              </button>
+            ))}
+          </div>
+
+          {/* ---------- KANAN: pratinjau ---------- */}
+          <div
+            id="cert-panel"
+            className="cert-preview"
+            role="tabpanel"
+            aria-labelledby={`cert-tab-${selected}`}
+          >
+            <div
+              className="certification-image"
+              role="button"
+              tabIndex={0}
+              aria-label={`Perbesar sertifikat ${current.title}`}
+              onClick={() => setActiveCert(current)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault()
+                  setActiveCert(current)
+                }
+              }}
+            >
+              <img key={current.title} src={current.image} alt={current.title} />
+
+              <div className="cert-zoom-hint">
+                <span className="cert-zoom-hint-icon">🔍</span>
+                <span className="cert-zoom-hint-text">Lihat sertifikat</span>
               </div>
             </div>
-          ))}
+
+            <div className="cert-detail">
+              <h3>{current.title}</h3>
+              <span className="cert-issuer-pill">{current.issuer}</span>
+              <p>{current.description}</p>
+            </div>
+          </div>
         </div>
       </div>
 

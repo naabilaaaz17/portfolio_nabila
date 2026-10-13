@@ -9,20 +9,14 @@ function Hero() {
           Open to work
         </div>
 
-        <p className="hero-greeting">Hello, I'm</p>
+        <p className="hero-greeting">Halo, Saya</p>
         <h1>Nabila Az Zahra</h1>
         <h2>Frontend Engineer & Web Developer</h2>
 
-<p className="hero-description">
-  Information Technology graduate from Telkom University
-  passionate about building responsive and user-focused
-  web applications.
-</p>
-
 
         <div className="hero-buttons">
-          <a href="#projects" className="btn primary">View my work</a>
-          <a href="#contact" className="btn secondary">Get in touch</a>
+          <a href="#projects" className="btn primary">Lihat Proyek Saya</a>
+          <a href="#contact" className="btn secondary">Hubungi Saya</a>
         </div>
       </div>
 
