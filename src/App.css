@@ -768,6 +768,55 @@ a {
 
 /* ---------- kartu pengalaman ---------- */
 
+/* =========================================================
+   7. EXPERIENCE
+========================================================= */
+
+.experience-section {
+  position: relative;
+  overflow: hidden;
+  padding: 100px 8%;
+  color: #5a2e36;
+  background:
+    radial-gradient(
+      circle at 90% 40%,
+      rgba(255, 255, 255, 0.85) 0,
+      rgba(255, 255, 255, 0) 20%
+    ),
+    radial-gradient(
+      circle at 6% 62%,
+      rgba(255, 255, 255, 0.8) 0,
+      rgba(255, 255, 255, 0) 20%
+    ),
+    linear-gradient(
+      180deg,
+      #f9e8ec 0%,
+      #f9e8ec 12%,
+      #fff7f8 55%,
+      #fff7f8 100%
+    );
+}
+
+.experience-section::before {
+  top: 35%;
+  left: -120px;
+}
+
+.experience-section::after {
+  left: 4%;
+  bottom: 40px;
+}
+
+.exp-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+
+/* ---------- kartu pengalaman ---------- */
+
 .exp-list {
   display: flex;
   flex-direction: column;
@@ -879,16 +928,26 @@ a {
 }
 
 
+/* ---------- kotak pink: polaroid + link video ---------- */
+
+.exp-media {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 32px 26px 28px;
+  background: #fdf0f3;
+  border: 1px solid #f1dce1;
+  border-radius: 30px;
+}
+
+
 /* ---------- foto polaroid ---------- */
 
 .exp-polaroids {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 22px 18px;
-  padding: 32px 26px 40px;
-  background: #fdf0f3;
-  border: 1px solid #f1dce1;
-  border-radius: 30px;
+  padding-bottom: 18px; /* ruang untuk polaroid genap yang turun 18px */
 }
 
 .exp-polaroid {
@@ -944,6 +1003,112 @@ a {
   z-index: 2;
   transform: rotate(0deg) scale(1.04);
   box-shadow: 0 18px 36px rgba(90, 46, 54, 0.22);
+}
+
+
+/* ---------- link video ---------- */
+
+.exp-video {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding-top: 24px;
+  border-top: 1px dashed #dfc2c9;
+}
+
+.exp-video-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  color: #946f77;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.exp-video-title::before,
+.exp-video-title::after {
+  content: '';
+  width: 22px;
+  height: 1px;
+  background: #d9b8c0;
+}
+
+.exp-video-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.exp-video-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 16px 7px 8px;
+  background: #ffffff;
+  border: 1px solid #ead5da;
+  border-radius: 999px;
+  box-shadow: 0 6px 14px rgba(90, 46, 54, 0.08);
+  color: #5a2e36;
+  font-size: 13px;
+  font-weight: 600;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    color 0.2s ease;
+}
+
+.exp-video-play {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 2px; /* koreksi optik segitiga */
+  background: #a85f70;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 9px;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.exp-video-arrow {
+  color: #a85f70;
+  font-size: 12px;
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
+}
+
+.exp-video-links a:hover {
+  transform: translateY(-2px);
+  background: #5a2e36;
+  border-color: #5a2e36;
+  box-shadow: 0 10px 20px rgba(90, 46, 54, 0.18);
+  color: #ffffff;
+}
+
+.exp-video-links a:hover .exp-video-play {
+  background: #ffffff;
+  color: #5a2e36;
+}
+
+.exp-video-links a:hover .exp-video-arrow {
+  color: #ffffff;
+  transform: translate(2px, -2px);
+}
+
+.exp-video-links a:focus-visible {
+  outline: 2px solid #a85f70;
+  outline-offset: 3px;
 }
 
 
@@ -2908,6 +3073,8 @@ footer {
 
   /* ---------- experience ---------- */
 
+    /* ---------- experience ---------- */
+
   .exp-case {
     padding: 50px 22px 28px;
     border-radius: 28px;
@@ -2937,12 +3104,15 @@ footer {
     font-size: 14px;
   }
 
-  .exp-polaroids {
-    gap: 20px 12px;
-    padding: 26px 16px 34px;
+  .exp-media {
+    gap: 24px;
+    padding: 26px 16px 24px;
     border-radius: 24px;
   }
 
+  .exp-polaroids {
+    gap: 20px 12px;
+  }
 
   /* ---------- projects ---------- */
 
@@ -3249,6 +3419,9 @@ footer {
 /* =========================================================
    19. REDUCED MOTION
 ========================================================= */
+/* =========================================================
+   19. REDUCED MOTION
+========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
@@ -3265,6 +3438,9 @@ footer {
   /* matikan semua transisi */
   .proj-browser,
   .exp-polaroid,
+  .exp-video-links a,
+  .exp-video-play,
+  .exp-video-arrow,
   .sk-tile,
   .sk-icon,
   .og-item,
@@ -3286,7 +3462,9 @@ footer {
   .cert-tab:hover,
   .cert-tab.active,
   .og-shot:hover img,
-  .certification-image:hover img {
+  .certification-image:hover img,
+  .exp-video-links a:hover,
+  .exp-video-links a:hover .exp-video-arrow {
     transform: none;
   }
 
