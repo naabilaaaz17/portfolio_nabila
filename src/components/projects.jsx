@@ -12,43 +12,87 @@ import rumahSuksesImg5 from "../assets/projects/rumah-sukses5.png"
 import craftfolioImg from "../assets/projects/craftfolio.png"
 import craftfolioImg2 from "../assets/projects/craftfolio2.png"
 import eventEaseImg from "../assets/projects/eventease.png"
+import eventEaseImg2 from "../assets/projects/eventease3.png"
 import eventEaseImg3 from "../assets/projects/eventease4.png"
 import eventEaseImg4 from "../assets/projects/eventease5.png"
 import eventEaseImg5 from "../assets/projects/eventease7.png"
-import eventEaseImg2 from "../assets/projects/eventease3.png"
+import jmediaImg from "../assets/projects/jmedia-1.jpeg"
+import jmediaImg2 from "../assets/projects/jmedia-2.jpeg"
+import jmediaImg3 from "../assets/projects/jmedia-3.jpeg"
+import jmediaImg4 from "../assets/projects/jmedia-4.jpeg"
+import jmediaImg5 from "../assets/projects/jmedia-5.jpeg"
+import jmediaImg6 from "../assets/projects/jmedia-6.jpeg"
+import jmediaImg7 from "../assets/projects/jmedia-7.jpeg"
 
 const projects = [
   {
     year: "2026",
+    title: "Social Media SuperApps",
+    description:
+      "Mengembangkan fitur automasi konten media sosial untuk SuperApps, mulai dari pengolahan ide dan transkrip menjadi konten, penyusunan caption, hingga perencanaan publikasi. Fokus pada pengembangan antarmuka dan alur kerja yang mempermudah pengelolaan konten.",
+    images: [
+      jmediaImg,
+      jmediaImg2,
+      jmediaImg3,
+      jmediaImg4,
+      jmediaImg5,
+      jmediaImg6,
+      jmediaImg7,
+    ],
+    tech: ["JavaScript"],
+  },
+  {
+    year: "2026",
     title: "Website Rumah Sukses Education Foundation",
-    description: "Mengembangkan platform web terintegrasi untuk yayasan prasekolah dan bimbingan belajar di Papua. Fitur meliputi pendaftaran siswa online yang terhubung ke dashboard admin dengan ekspor CSV, notifikasi email/WhatsApp otomatis, integrasi Google Maps, dan desain yang sepenuhnya responsif.",
-    images: [rumahSuksesImg, rumahSuksesImg2, rumahSuksesImg3, rumahSuksesImg4, rumahSuksesImg5],
+    description:
+      "Mengembangkan platform web terintegrasi untuk yayasan prasekolah dan bimbingan belajar di Papua. Fitur meliputi pendaftaran siswa online yang terhubung ke dashboard admin dengan ekspor CSV, notifikasi email/WhatsApp otomatis, integrasi Google Maps, dan desain yang responsif.",
+    images: [
+      rumahSuksesImg,
+      rumahSuksesImg2,
+      rumahSuksesImg3,
+      rumahSuksesImg4,
+      rumahSuksesImg5,
+    ],
     tech: ["React", "Node.js", "MongoDB"],
   },
   {
     year: "2025",
     title: "DoTrack",
-    description: "Mengembangkan sistem berbasis web untuk mendigitalisasi Instruksi Kerja di PT Len Railway Systems, menggantikan dokumentasi manual. Fitur meliputi operasi CRUD, validasi data, pelacakan status, dan dokumentasi berbasis database, dibangun secara kolaboratif dengan prinsip OOP untuk skalabilitas.",
-    images: [dotrackImg, dotrackImg2, dotrackImg3, dotrackImg4, dotrackImg5],
+    description:
+      "Mengembangkan sistem berbasis web untuk mendigitalisasi Instruksi Kerja di PT Len Railway Systems, menggantikan dokumentasi manual. Fitur meliputi operasi CRUD, validasi data, pelacakan status, dan dokumentasi berbasis database, dengan pendekatan OOP.",
+    images: [
+      dotrackImg,
+      dotrackImg2,
+      dotrackImg3,
+      dotrackImg4,
+      dotrackImg5,
+    ],
     tech: ["React", "Firebase"],
   },
   {
     year: "2025",
     title: "Craftfolio",
-    description: "Website pembuat portofolio yang membantu desainer membuat dan menampilkan karya mereka dengan mudah, dibangun dengan Laravel dan Bootstrap.",
+    description:
+      "Website pembuat portofolio yang membantu desainer membuat dan menampilkan karya mereka dengan mudah, dibangun menggunakan Laravel dan Bootstrap.",
     images: [craftfolioImg, craftfolioImg2],
     tech: ["Laravel", "Bootstrap"],
   },
   {
     year: "2023",
     title: "EventEase",
-    description: "Platform manajemen acara berbasis web dengan fitur pembuatan acara dan pendaftaran peserta, dibangun dengan prinsip OOP agar sistemnya modular dan mudah dikembangkan.",
-    images: [eventEaseImg, eventEaseImg2, eventEaseImg3, eventEaseImg4, eventEaseImg5],
+    description:
+      "Platform manajemen acara berbasis web dengan fitur pembuatan acara dan pendaftaran peserta, dibangun menggunakan Java, MySQL, dan Apache Tomcat dengan prinsip OOP.",
+    images: [
+      eventEaseImg,
+      eventEaseImg2,
+      eventEaseImg3,
+      eventEaseImg4,
+      eventEaseImg5,
+    ],
     tech: ["Java", "MySQL", "Apache Tomcat"],
   },
 ]
 
-/* bilah atas bergaya jendela browser */
 function BrowserBar({ title }) {
   return (
     <span className="proj-bar" aria-hidden="true">
@@ -66,10 +110,10 @@ function Projects() {
   const [lightboxProject, setLightboxProject] = useState(null)
   const [lightboxIndex, setLightboxIndex] = useState(0)
 
-  const openLightbox = (projectIdx, imgIdx = 0) => {
+  const openLightbox = useCallback((projectIdx, imgIdx = 0) => {
     setLightboxProject(projectIdx)
     setLightboxIndex(imgIdx)
-  }
+  }, [])
 
   const closeLightbox = useCallback(() => {
     setLightboxProject(null)
@@ -77,23 +121,37 @@ function Projects() {
 
   const showNext = useCallback(() => {
     if (lightboxProject === null) return
+
     const total = projects[lightboxProject].images.length
+
     setLightboxIndex((prev) => (prev + 1) % total)
   }, [lightboxProject])
 
   const showPrev = useCallback(() => {
     if (lightboxProject === null) return
+
     const total = projects[lightboxProject].images.length
+
     setLightboxIndex((prev) => (prev - 1 + total) % total)
   }, [lightboxProject])
 
   useEffect(() => {
     if (lightboxProject === null) return
 
-    const handleKeyDown = (e) => {
-      if (e.key === "Escape") closeLightbox()
-      if (e.key === "ArrowRight") showNext()
-      if (e.key === "ArrowLeft") showPrev()
+    const previousOverflow = document.body.style.overflow
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        closeLightbox()
+      }
+
+      if (event.key === "ArrowRight") {
+        showNext()
+      }
+
+      if (event.key === "ArrowLeft") {
+        showPrev()
+      }
     }
 
     document.addEventListener("keydown", handleKeyDown)
@@ -101,11 +159,14 @@ function Projects() {
 
     return () => {
       document.removeEventListener("keydown", handleKeyDown)
-      document.body.style.overflow = ""
+      document.body.style.overflow = previousOverflow
     }
   }, [lightboxProject, closeLightbox, showNext, showPrev])
 
-  const activeImages = lightboxProject !== null ? projects[lightboxProject].images : []
+  const activeProject =
+    lightboxProject !== null ? projects[lightboxProject] : null
+
+  const activeImages = activeProject?.images ?? []
 
   return (
     <section className="projects-section" id="projects">
@@ -116,7 +177,6 @@ function Projects() {
         <div className="projects-list">
           {projects.map((project, projectIdx) => (
             <article className="proj-row" key={project.title}>
-              {/* ---------- screenshot dalam bingkai browser ---------- */}
               <div className="proj-visual">
                 {project.images.length > 1 && (
                   <button
@@ -141,27 +201,29 @@ function Projects() {
                 </button>
               </div>
 
-              {/* ---------- teks ---------- */}
               <div className="proj-text">
                 <span className="proj-num">
                   {String(projectIdx + 1).padStart(2, "0")}
                 </span>
+
                 <span className="proj-year">{project.year}</span>
+
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
 
                 <div className="proj-tech">
-                  {project.tech.map((t) => (
-                    <span key={t}>{t}</span>
+                  {project.tech.map((technology) => (
+                    <span key={technology}>{technology}</span>
                   ))}
                 </div>
 
                 <button
                   type="button"
                   className="proj-more"
-                  onClick={() => openLightbox(projectIdx, 0)}
+                  onClick={() => openLightbox(projectIdx)}
                 >
-                  Lihat {project.images.length} foto <span aria-hidden="true">→</span>
+                  Lihat {project.images.length} foto{" "}
+                  <span aria-hidden="true">→</span>
                 </button>
               </div>
             </article>
@@ -169,20 +231,31 @@ function Projects() {
         </div>
       </div>
 
-      {lightboxProject !== null && (
-        <div className="lightbox-overlay" onClick={closeLightbox}>
+      {activeProject && (
+        <div
+          className="lightbox-overlay"
+          role="dialog"
+          aria-modal="true"
+          aria-label={`Galeri ${activeProject.title}`}
+          onClick={closeLightbox}
+        >
           <button
+            type="button"
             className="lightbox-close"
             onClick={closeLightbox}
-            aria-label="Tutup"
+            aria-label="Tutup galeri"
           >
             ×
           </button>
 
           {activeImages.length > 1 && (
             <button
+              type="button"
               className="lightbox-nav lightbox-prev"
-              onClick={(e) => { e.stopPropagation(); showPrev() }}
+              onClick={(event) => {
+                event.stopPropagation()
+                showPrev()
+              }}
               aria-label="Foto sebelumnya"
             >
               ‹
@@ -191,14 +264,15 @@ function Projects() {
 
           <div
             className="lightbox-content"
-            onClick={(e) => e.stopPropagation()}
+            onClick={(event) => event.stopPropagation()}
           >
             <img
               src={activeImages[lightboxIndex]}
-              alt={`${projects[lightboxProject].title} - ${lightboxIndex + 1}`}
+              alt={`${activeProject.title} - foto ${lightboxIndex + 1}`}
             />
+
             {activeImages.length > 1 && (
-              <div className="lightbox-counter">
+              <div className="lightbox-counter" aria-live="polite">
                 {lightboxIndex + 1} / {activeImages.length}
               </div>
             )}
@@ -206,8 +280,12 @@ function Projects() {
 
           {activeImages.length > 1 && (
             <button
+              type="button"
               className="lightbox-nav lightbox-next"
-              onClick={(e) => { e.stopPropagation(); showNext() }}
+              onClick={(event) => {
+                event.stopPropagation()
+                showNext()
+              }}
               aria-label="Foto berikutnya"
             >
               ›
