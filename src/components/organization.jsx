@@ -13,10 +13,6 @@ import mudikRoadshowPhoto2 from "../assets/organization/mudik-roadshow2.jpeg"
 import mudikRoadshowPhoto3 from "../assets/organization/mudik-roadshow3.jpeg"
 import mudikRoadshowPhoto4 from "../assets/organization/mudik-roadshow4.jpeg"
 
-// CARA MENAMBAH FOTO:
-// 1. import foto baru di atas, mis. import interiumPhoto2 from "../assets/organization/interium-2.jpeg"
-// 2. masukkan ke array `photos` kegiatan yang sesuai. Foto pertama jadi foto utama.
-// Mosaik menampilkan maksimal 5 foto; sisanya muncul sebagai "+N" dan tetap bisa dilihat di lightbox.
 const organizations = [
   {
     name: "Himpunan Mahasiswa Teknologi Informasi (HMIT)",
@@ -52,7 +48,6 @@ const organizations = [
   },
 ]
 
-/* ---------- mosaik foto: tata letak menyesuaikan jumlah foto ---------- */
 function Mosaic({ photos, name, onOpen }) {
   const shown = photos.slice(0, 5)
   const extra = photos.length - shown.length
@@ -77,7 +72,6 @@ function Mosaic({ photos, name, onOpen }) {
   )
 }
 
-/* ---------- satu baris akordeon ---------- */
 function OrgItem({ org, isOpen, onToggle, onOpenPhoto, panelId }) {
   const faces = org.photos.slice(0, 3)
   const hiddenFaces = org.photos.length - faces.length
@@ -183,8 +177,8 @@ function Organization() {
   return (
     <section id="organization" className="organization-section">
       <div className="organization-inner">
-        <p className="section-eyebrow">Organization</p>
-        <h2>Organizational Experience</h2>
+        <p className="section-eyebrow">Organisasi</p>
+        <h2>Pengalaman Organisasi</h2>
 
         <div className="og-list">
           {organizations.map((org, orgIdx) => (

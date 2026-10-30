@@ -12,7 +12,7 @@ function About() {
   return (
     <section id="about" className="about-section">
       <div className="about-inner">
-        <p className="section-eyebrow">About me</p>
+        <p className="section-eyebrow">Tentang Saya</p>
 
         {/* ---------- pernyataan besar ---------- */}
         <h2 className="ed-statement">
@@ -22,13 +22,12 @@ function About() {
         {/* ---------- dua kolom: cerita + poin ---------- */}
         <div className="ed-body">
           <div className="ed-story">
-            <p className="ed-lead">
-              Lulusan Teknologi Informasi dari Universitas Telkom dengan
-              pengalaman mengembangkan aplikasi web melalui program magang dan
-              berbagai proyek akademik. Memahami alur pengembangan dari
-              frontend hingga backend, dengan minat khusus pada Front-End
-              Development.
-            </p>
+<p className="ed-lead">
+  Lulusan Teknologi Informasi Universitas Telkom dengan pengalaman
+  dalam pengembangan aplikasi web melalui pengalaman profesional dan
+  berbagai proyek akademik. Memahami proses pengembangan aplikasi
+  dari frontend hingga backend, dengan fokus pada Front-End Development.
+</p>
 
             <p className="ed-text">
               Teliti, adaptif, dan komunikatif. Mampu bekerja mandiri maupun

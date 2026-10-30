@@ -77,8 +77,8 @@ function Certifications() {
   return (
     <section id="certifications" className="certifications-section">
       <div className="certifications-inner">
-        <p className="section-eyebrow">Certifications</p>
-        <h2>Certifications & Achievements</h2>
+        <p className="section-eyebrow">Sertifikasi</p>
+        <h2>Sertifikasi & Pencapaian</h2>
 
         <div className="cert-showcase">
           {/* ---------- KIRI: daftar ---------- */}

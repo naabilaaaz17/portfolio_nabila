@@ -28,8 +28,8 @@ const projects = [
   {
     year: "2026",
     title: "Social Media SuperApps",
-    description:
-      "Mengembangkan fitur automasi konten media sosial untuk SuperApps, mulai dari pengolahan ide dan transkrip menjadi konten, penyusunan caption, hingga perencanaan publikasi. Fokus pada pengembangan antarmuka dan alur kerja yang mempermudah pengelolaan konten.",
+   description:
+  "Mengembangkan fitur Sosmed Poster pada platform SaaS SuperApps: studio konten berbasis AI yang mengubah ide, transkrip, atau rekaman menjadi naskah, caption, foto, dan video, lalu menjadwalkan posting otomatis ke TikTok, YouTube, Instagram, Facebook, dan X. Mencakup mode Autopilot dengan tinjau sebelum posting, caption per platform, kalender konten, dan Brand Kit.",
     images: [
       jmediaImg,
       jmediaImg2,
@@ -39,7 +39,7 @@ const projects = [
       jmediaImg6,
       jmediaImg7,
     ],
-    tech: ["JavaScript"],
+    tech: ["JavaScript", "HTML", "CSS"],
   },
   {
     year: "2026",
@@ -59,7 +59,7 @@ const projects = [
     year: "2025",
     title: "DoTrack",
     description:
-      "Mengembangkan sistem berbasis web untuk mendigitalisasi Instruksi Kerja di PT Len Railway Systems, menggantikan dokumentasi manual. Fitur meliputi operasi CRUD, validasi data, pelacakan status, dan dokumentasi berbasis database, dengan pendekatan OOP.",
+      "Aplikasi web Documented Instruction Tracker di PT Len Railway Systems untuk mengelola dan memantau Instruksi Kerja. Membangun antarmuka responsif dengan React.js (Login, Dashboard, User Management, Task Management, Progress Monitoring), terintegrasi dengan Firebase Firestore, Authentication, dan RBAC untuk hak akses Admin dan Employee. Mencakup fitur Manufacturing Order (MO), pelacakan progres, serta pengujian fungsionalitas dan UAT.",
     images: [
       dotrackImg,
       dotrackImg2,
@@ -67,7 +67,7 @@ const projects = [
       dotrackImg4,
       dotrackImg5,
     ],
-    tech: ["React", "Firebase"],
+    tech: ["React.js", "Firebase", "Firestore"],
   },
   {
     year: "2025",
@@ -171,8 +171,8 @@ function Projects() {
   return (
     <section className="projects-section" id="projects">
       <div className="projects-inner">
-        <p className="section-eyebrow">Selected work</p>
-        <h2>Project Experience</h2>
+        <p className="section-eyebrow">Proyek</p>
+        <h2>Pengalaman Proyek</h2>
 
         <div className="projects-list">
           {projects.map((project, projectIdx) => (

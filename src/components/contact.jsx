@@ -7,14 +7,14 @@ import contactPhoto2 from "../assets/contact/contact-2.png"
 const contacts = [
   {
     label: "Email",
-    value: "naabilaaaz17@gmail.com",
-    href: "mailto:naabilaaaz17@gmail.com",
+    value: "naabilaaaz.career@gmail.com",
+    href: "mailto:naabilaaaz.career@gmail.com",
     icon: <MdEmail />,
   },
   {
     label: "LinkedIn",
-    value: "naabila-az-zahra",
-    href: "http://www.linkedin.com/in/naabila-az-zahra",
+    value: "Nabila Az Zahra",
+    href: "https://linkedin.com/in/naabilaaaz17",
     icon: <FaLinkedinIn />,
     external: true,
   },
@@ -37,7 +37,7 @@ function Contact() {
   return (
     <section id="contact" className="contact-section">
       <div className="contact-inner">
-        <p className="section-eyebrow">Contact</p>
+        <p className="section-eyebrow">Kontak</p>
 
         <div className="contact-card">
           <div className="contact-photo contact-photo--left">

@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 
 const links = [
-  { id: 'about', label: 'About' },
-  { id: 'experience', label: 'Experience' },
-  { id: 'projects', label: 'Projects' },
-  { id: 'skills', label: 'Skills' },
-  { id: 'organization', label: 'Organization' },
-  { id: 'certifications', label: 'Certifications' },
+  { id: 'about', label: 'Tentang Saya' },
+  { id: 'experience', label: 'Pengalaman' },
+  { id: 'projects', label: 'Proyek' },
+  { id: 'skills', label: 'Keterampilan' },
+  { id: 'organization', label: 'Organisasi' },
+  { id: 'certifications', label: 'Sertifikasi' },
 ]
 
 function Navbar() {
@@ -90,7 +90,7 @@ function Navbar() {
           ))}
 
           <a href="#contact" className="nav-cta" onClick={closeMenu}>
-            Contact
+            Kontak
           </a>
         </div>
 
