@@ -10,13 +10,10 @@ const experiences = [
   {
     company: "PT Joglosemar Media Technology",
     role: "Junior Staff Developer Assistant",
-    period: "Okt 2026 – Sekarang",
+    period: "Okt 2026 – Nov 2026",
 points: [
-  "Terlibat dalam pengembangan platform SuperApps, sebuah platform SaaS dengan berbagai solusi digital untuk kebutuhan bisnis, seperti AI Assistant, Digital Signage, Social Media, WhatsApp Bot, Manajemen Gudang, CRM, Absensi Karyawan, dan VoIP.",
-  "Berkontribusi pada fitur Social Media (Sosmed Poster): studio konten berbasis AI yang membuat naskah, foto, dan video, lalu menjadwalkan posting otomatis ke TikTok, YouTube, Instagram, Facebook, dan X.",
-  "Mengembangkan antarmuka Studio Konten, Kalender, serta Posting & Jadwal, termasuk mode Autopilot dari ide, transkrip, atau rekaman, pengaturan durasi, rasio, gaya bahasa, dan suara narasi, caption per platform, serta alur tinjau sebelum posting.",
-  "Mengembangkan fitur Brand Kit (logo/watermark, font dan warna caption, intro/outro, kartu penutup CTA) yang diterapkan otomatis ke video baru, menggunakan JavaScript, HTML, dan CSS.",
-  "Membuat video tutorial instalasi dan penggunaan SuperApps AI Assistant serta Digital Signage, menyusun materi presentasi produk, dan mempresentasikan kedua layanan tersebut kepada tim internal perusahaan.",
+  "Membuat video tutorial penggunaan perangkat lunak, menyiapkan presentasi produk, serta mempresentasikan produk – produk yaitu AI Assistant, Digital Signage, VoIP IPPBX, dan Absensi Karyawan kepada tim internal.",
+  "Berkontribusi dalam pengembangan fitur Social Media pada SuperApps (SaaS), sebuah platform studio konten berbasis AI yang dapat menghasilkan skrip, foto, dan video serta menjadwalkan publikasi otomatis ke Instagram, Facebook, TikTok, YouTube, dan X.",
 ],
     photos: [
       { src: jmedia1, alt: "Kegiatan di PT Joglosemar Media Technology" },
