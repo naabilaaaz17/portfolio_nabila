@@ -3,6 +3,7 @@ import {
   SiJavascript,
   SiPhp,
   SiCplusplus,
+  SiGo,
   SiHtml5,
   SiReact,
   SiBootstrap,
@@ -39,6 +40,7 @@ const skills = {
     { name: 'JavaScript', icon: <SiJavascript />, color: '#F7DF1E' },
     { name: 'PHP', icon: <SiPhp />, color: '#777BB4' },
     { name: 'Java', icon: <FaJava />, color: '#ED8B00' },
+    { name: 'Go (Golang)', icon: <SiGo />, color: '#00ADD8' },
     { name: 'C++', icon: <SiCplusplus />, color: '#00599C' },
   ],
 

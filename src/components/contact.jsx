@@ -53,8 +53,7 @@ function Contact() {
             </h2>
 
             <p>
-              Saya terbuka untuk peluang di bidang frontend development, web
-              development, dan peran terkait.
+              Saya terbuka untuk peluang karier di bidang Web Development dan pengembangan aplikasi web.
             </p>
 
             <div className="contact-grid">

@@ -1,11 +1,21 @@
+
 import telkomLogo from "../assets/telkom-logo.png"
 
-const skills = ["HTML", "CSS", "JavaScript", "React", "Bootstrap", "Laravel"]
+const skills = [
+  "JavaScript",
+  "PHP",
+  "React.js",
+  "Vue.js",
+  "Node.js",
+  "Laravel",
+  "MySQL",
+  "Firebase",
+]
 
 const highlights = [
-  "Implementasi fitur aplikasi web, frontend hingga backend",
-  "Input dan validasi data, serta pengujian fungsionalitas fitur",
-  "Pengelolaan dan integrasi data dengan database",
+  "Pengembangan fitur dan fungsionalitas aplikasi web",
+  "Integrasi layanan backend dan pengelolaan database",
+  "Implementasi validasi data serta pengujian fungsionalitas aplikasi",
 ]
 
 function About() {
@@ -14,24 +24,27 @@ function About() {
       <div className="about-inner">
         <p className="section-eyebrow">Tentang Saya</p>
 
-        {/* ---------- pernyataan besar ---------- */}
         <h2 className="ed-statement">
-          Berfokus pada pengembangan web dan pengalaman pengguna.
+          Berfokus pada pengembangan aplikasi web yang fungsional dan mudah digunakan.
         </h2>
 
-        {/* ---------- dua kolom: cerita + poin ---------- */}
         <div className="ed-body">
           <div className="ed-story">
-<p className="ed-lead">
-  Lulusan Teknologi Informasi Universitas Telkom dengan pengalaman
-  dalam pengembangan aplikasi web melalui pengalaman profesional dan
-  berbagai proyek akademik. Memahami proses pengembangan aplikasi
-  dari frontend hingga backend, dengan fokus pada Front-End Development.
-</p>
+            <p className="ed-lead">
+              Lulusan S1 Teknologi Informasi Universitas Telkom dengan predikat
+              Cum Laude dan IPK 3,66/4,00. Memiliki pengalaman dalam
+              pengembangan aplikasi berbasis web melalui pengalaman profesional,
+              magang, dan proyek akademik. Terampil menggunakan HTML, CSS,
+              JavaScript, React.js, dan Vue.js dalam membangun antarmuka pengguna,
+              serta memiliki pengalaman dalam integrasi layanan backend dan
+              database. Tertarik mengembangkan karier di bidang Web Development
+              dan membangun aplikasi yang fungsional serta mudah digunakan.
+            </p>
 
             <p className="ed-text">
-              Teliti, adaptif, dan komunikatif. Mampu bekerja mandiri maupun
-              dalam tim, serta terus mempelajari teknologi baru.
+              Teliti, adaptif, dan komunikatif. Mampu bekerja secara mandiri
+              maupun dalam tim, serta memiliki antusiasme untuk terus
+              mempelajari teknologi baru.
             </p>
 
             <div className="ed-cta">
@@ -43,7 +56,7 @@ function About() {
                 Download CV
               </a>
               <a href="#contact" className="btn secondary">
-                Hubungi saya
+                Hubungi Saya
               </a>
             </div>
           </div>
@@ -55,7 +68,6 @@ function About() {
           </ul>
         </div>
 
-        {/* ---------- pita: pendidikan, IPK, skill ---------- */}
         <div className="ed-ribbon">
           <div className="ed-edu">
             <img
@@ -66,15 +78,17 @@ function About() {
             <div className="ed-edu-text">
               <span className="ed-edu-name">Universitas Telkom</span>
               <span className="ed-edu-degree">
-                Sarjana Teknologi Informasi
+                S1 Teknologi Informasi
               </span>
-              <span className="ed-edu-period">Sept 2022 – Aug 2026</span>
+              <span className="ed-edu-period">
+                Sept 2022 – Aug 2026
+              </span>
             </div>
           </div>
 
           <div className="ed-gpa">
             <strong>3.66</strong>
-            <span>dari 4.00</span>
+            <span>Cum Laude · 4.00</span>
           </div>
 
           <div className="ed-chips">
