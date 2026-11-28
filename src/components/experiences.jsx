@@ -33,14 +33,16 @@ points: [
     ],
   },
   {
-    company: "PT Len Railway Systems",
-    role: "Front-End Developer Intern",
-    period: "Mei 2025 – Sep 2025",
-    points: [
-      "Terlibat dalam pengembangan aplikasi web DoTrack (Documented Instruction Tracker), sistem digital untuk mengelola dan memantau Instruksi Kerja (Work Instructions), selama program Internship – Logistics, Production & Quality Management.",
-      "Mengembangkan antarmuka pengguna dengan React.js yang responsif, meliputi halaman Login, Dashboard, User Management, Task Management, dan Progress Monitoring.",
-      "Mengintegrasikan aplikasi dengan Firebase sebagai BaaS, Firestore untuk database real-time, Firebase Authentication, serta Role-Based Access Control (RBAC) untuk hak akses Admin dan Employee.",
-    ],
+  company: "PT Len Railway Systems",
+  role: "Full Stack Developer Intern",
+  period: "Juni 2025 – September 2025",
+  points: [
+    "Mengembangkan aplikasi web DoTrack (Documented Instruction Tracker) untuk mendigitalisasi proses pengelolaan dan pemantauan instruksi kerja.",
+    "Merancang dan mengembangkan antarmuka aplikasi menggunakan React.js, termasuk halaman Login, Dashboard, Task Execution, MO Selection, dan Progress Monitoring.",
+    "Mengintegrasikan Firebase Authentication dan Cloud Firestore untuk autentikasi pengguna serta pengelolaan data secara real-time.",
+    "Menerapkan role-based access control menggunakan Protected Route untuk membedakan hak akses Admin dan Employee.",
+    "Melakukan pengujian fungsionalitas dan evaluasi UI/UX untuk memastikan aplikasi berjalan sesuai kebutuhan pengguna."
+  ],
     photos: [
       { src: lenPhoto1, alt: "Kegiatan magang di PT Len Railway Systems" },
       { src: lenPhoto2, alt: "Kegiatan magang di PT Len Railway Systems" },

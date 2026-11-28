@@ -53,22 +53,28 @@ const projects = [
       rumahSuksesImg4,
       rumahSuksesImg5,
     ],
-    tech: ["React", "Node.js", "MongoDB"],
+    tech: ["React.js", "Node.js", "MongoDB"],
   },
-  {
-    year: "2025",
-    title: "DoTrack",
-    description:
-      "Aplikasi web Documented Instruction Tracker di PT Len Railway Systems untuk mengelola dan memantau Instruksi Kerja. Membangun antarmuka responsif dengan React.js (Login, Dashboard, User Management, Task Management, Progress Monitoring), terintegrasi dengan Firebase Firestore, Authentication, dan RBAC untuk hak akses Admin dan Employee. Mencakup fitur Manufacturing Order (MO), pelacakan progres, serta pengujian fungsionalitas dan UAT.",
-    images: [
-      dotrackImg,
-      dotrackImg2,
-      dotrackImg3,
-      dotrackImg4,
-      dotrackImg5,
-    ],
-    tech: ["React.js", "Firebase", "Firestore"],
-  },
+{
+  year: "2025",
+  title: "DoTrack",
+  description:
+    "DoTrack (Documented Instruction Tracker) merupakan aplikasi web yang dikembangkan untuk mendigitalisasi proses pengelolaan instruksi kerja di PT Len Railway Systems. Aplikasi ini mendukung pengelolaan Work Instruction, Manufacturing Order (MO), eksekusi tugas, serta pemantauan progres pekerjaan secara real-time. Dikembangkan menggunakan React.js dan Firebase, DoTrack dilengkapi fitur autentikasi pengguna, pengaturan hak akses berdasarkan role, dan sinkronisasi data melalui Cloud Firestore.",
+  images: [
+    dotrackImg,
+    dotrackImg2,
+    dotrackImg3,
+    dotrackImg4,
+    dotrackImg5,
+  ],
+  tech: [
+    "React.js",
+    "JavaScript",
+    "Firebase",
+    "Cloud Firestore",
+    "Firebase Authentication",
+  ],
+},
   {
     year: "2025",
     title: "Craftfolio",
